@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Controls from './Controls';
+import TextView from './TextView';
+
+import generateText from '../synth';
 
 class App extends Component {
     constructor(props) { 
@@ -40,7 +43,11 @@ class App extends Component {
         e.preventDefault();
 
         if(this.state.isValidNumber) {
-            
+            let newBusinessText = generateText(this.state.numberOfParagraphs);
+
+            this.setState({
+                businessText: newBusinessText
+            });
         }
     }
 
@@ -53,6 +60,9 @@ class App extends Component {
                     handleSubmit={ this.handleSubmit }
                     isValidNumber={ this.state.isValidNumber }
                     numberOfParagraphs={ this.state.numberOfParagraphs }
+                />
+                <TextView
+                    businessText={ this.state.businessText }
                 />
             </div>  
         );

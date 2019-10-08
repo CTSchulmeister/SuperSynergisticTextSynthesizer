@@ -1,5 +1,3 @@
-'use strict';
-
 const MAXIMUM_NUMBER_OF_PARAGRAPHS = 30;
 const MINIMUM_NUMBER_OF_SENTENCES = 3;
 const MAXIMUM_NUMBER_OF_SENTENCES = 7 - MINIMUM_NUMBER_OF_SENTENCES;
@@ -80,7 +78,7 @@ const getPastYear = () => {
 const generateSentence = (previousIndex = null) => {
     let sentenceIndex = Math.floor(Math.random() * SENTENCE_TEMPLATES.length);
 
-    while(sentenceIndex == previousIndex) {
+    while(sentenceIndex === previousIndex) {
         sentenceIndex = Math.floor(Math.random() * SENTENCE_TEMPLATES.length);
     }
 
@@ -90,7 +88,7 @@ const generateSentence = (previousIndex = null) => {
     let index;
 
     sentenceTemplate.forEach(word => {
-        if(word.charAt(0) != '$') {
+        if(word.charAt(0) !== '$') {
             sentence += word;
         } else {
             switch(word) {
@@ -244,11 +242,11 @@ const generateText = (numberOfParagraphs) => {
 
     for(let paragraph = 2; paragraph < numberOfParagraphs; paragraph++) {
         let bodyParagraphObject = generateBodyParagraph(previousTransitionIndex);
-        generatedText += '\n\n' + bodyParagraphObject.paragraph;
+        generatedText += '\n' + bodyParagraphObject.paragraph;
         previousTransitionIndex = bodyParagraphObject.transitionIndex;
     };
 
-    generatedText += '\n\n' + generateConclusionParagraph();
+    generatedText += '\n' + generateConclusionParagraph();
 
     return generatedText;
 };
