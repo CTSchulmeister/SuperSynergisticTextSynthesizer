@@ -188,10 +188,15 @@ const generateIntroductionParagraph = () => {
     return generatedText;
 };
 
-const generateBodyParagraph = () => {
+const generateBodyParagraph = (previousTransitionIndex = null) => {
     let numberOfSentences = generateNumberOfSentences();
 
     let transitionIndex = Math.floor(Math.random() * BODY_TRANSITIONS.length);
+
+    while(transitionIndex === previousTransitionIndex) {
+        transitionIndex = Math.floor(Math.random() * BODY_TRANSITIONS.length);
+    }
+
     let paragraph = BODY_TRANSITIONS[transitionIndex];
 
     let sentenceIndex = null;

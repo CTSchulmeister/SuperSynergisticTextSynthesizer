@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+
+import Header from './Header';
 import Controls from './Controls';
 import TextView from './TextView';
 
 import generateText from '../synth';
+import '../scss/main.scss';
 
 class App extends Component {
     constructor(props) { 
@@ -54,6 +57,7 @@ class App extends Component {
     render() {
         return (
             <div className="ssts-container">
+                <Header />
                 <Controls 
                     changeNumberOfParagraphs={ this.changeNumberOfParagraphs }
                     validateNumberOfParagraphs={ this.validateNumberOfParagraphs }
