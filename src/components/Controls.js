@@ -40,6 +40,16 @@ const Controls = (props) => {
                 I don't know, I find the over-use of buzzwords in marketing pitches funny for some reason.
                 This is a completely pointless app, but sometimes it gives funny results.
             </p>
+            <hr className="ssts-controls__divider" />
+            <a
+                className="ssts-controls__github-link"
+                href="https://github.com/CTSchulmeister/SuperSynergisticTextSynthesizer"
+                rel="external"
+                title="View source code"
+            >
+                <img height="24" width="24" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" alt="GitHub Logo" />
+                View Source Code
+            </a>
         </div>
     );
 }
