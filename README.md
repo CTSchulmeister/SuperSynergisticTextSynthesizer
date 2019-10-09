@@ -7,8 +7,8 @@ nonsensical business meeting transcripts.  Why?  I don't know.  But it was fun t
 
 ## Starting the application:
 
-'npm install'
+`npm install`
 
 followed by
 
-'npm start'
+`npm start`
